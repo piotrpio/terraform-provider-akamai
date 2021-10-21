@@ -207,6 +207,7 @@ func configureContext(ctx context.Context, d *schema.ResourceData) (interface{},
 
 	// PROVIDER_VERSION env value must be updated in version file, for every new release.
 	userAgent := instance.UserAgent(ProviderName, version.ProviderVersion)
+	log.Info("Provider version: %s", version.ProviderVersion)
 
 	sess, err := session.New(
 		session.WithSigner(edgerc),
